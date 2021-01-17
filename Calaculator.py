@@ -1,13 +1,13 @@
 from tkinter import *
 
-window = Tk()
+Win = Tk()
 
 expression = ""
 equation = StringVar()
 topEq = StringVar()
 
 photo = PhotoImage(file="calacimg.png")
-window.iconphoto(False, photo)
+Win.iconphoto(False, photo)
 
 def press(num):
 	global expression
@@ -25,7 +25,7 @@ def pressEquate(equate):
 def pressEqual():
 	global expression
 	total=str(eval(expression))
-	mainEq.set(total)
+	equation.set(total)
 	
 def pressSquare():
 	global expression
@@ -48,7 +48,7 @@ def pressClear():
 	global expression
 	expression=""
 	topEq.set(expression)
-	mainEq.set(expression)
+	equation.set(expression)
 	
 def pressPercent():
 	global expression
@@ -88,7 +88,7 @@ screenB=Entry(width=6,
 		border=0,
 		font=('helvetica',56),
 		justify=RIGHT,
-		textvariable=mainEq)
+		textvariable=equation)
 screenB.grid(row=2,
 		columnspan=4)
 		
